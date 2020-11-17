@@ -38,7 +38,7 @@ class StoryBrain {
         choice2: '')
   ];
 
-  //TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
+  //TODO: Done Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
   getStory() {
     return _storyData[0].storyTitle;
   }
