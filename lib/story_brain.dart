@@ -40,53 +40,59 @@ class StoryBrain {
         choice2: '')
   ];
 
+  //TODO: Done Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
+
   //TODO: Done Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
   getStory() {
-    return _storyData[0].storyTitle;
+    return _storyData[_storyNumber].storyTitle;
   }
 
   //TODO: Done Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
   getChoice1() {
-    return _storyData[0].choice1;
+    return _storyData[_storyNumber].choice1;
   }
   
   //TODO: Done Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
   getChoice2() {
-    return _storyData[0].choice2;
+    return _storyData[_storyNumber].choice2;
   }
 
   //TODO: Done Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
   nextStory(int choiceNumber) {
     //TODO: Done Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
-
+    print('====================== '+_storyNumber.toString());
     if (_storyNumber == 0) {
       if (choiceNumber == 1) {
-        _storyNumber = 2;
+        print('22222222222222222222222');
+        this._storyNumber = 2;
       } else if (choiceNumber == 2) {
-        _storyNumber = 1;
+        this._storyNumber = 1;
+        print('11111111111111111111111');
       }
-    }
-
-    if (_storyNumber == 1) {
+    } else if (_storyNumber == 1) {
       if (choiceNumber == 1) {
-        _storyNumber = 2;
+        this._storyNumber = 2;
+        print('22222222222222222222222');
       } else if (choiceNumber == 2) {
-        _storyNumber = 3;
+        this._storyNumber = 3;
+        print('33333333333333333333333');
       }
-    }
-
-    if (_storyNumber == 2) {
+    } else if (_storyNumber == 2) {
       if (choiceNumber == 1) {
         _storyNumber = 5;
+        print('55555555555555555555555');
       } else if (choiceNumber == 2) {
         _storyNumber = 4;
+        print('44444444444444444444444');
       }
-    }
-
-    if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5)
+    } else if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5)
     {
       restart();
+      print('00000000000000000000000000000000');
     }
+    
+    print(choiceNumber.toString() + " => " + _storyNumber.toString());
+
   }
 
   //TODO: Done Step 22 - In nextStory() if the storyNumber is equal to 3 or 4 or 5, that means it's the end of the game and it should call a method called restart() that resets the storyNumber to 0.
@@ -94,9 +100,6 @@ class StoryBrain {
     _storyNumber = 0;
   }
 }
-//TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
-
-
 
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
