@@ -3,7 +3,7 @@ import 'story.dart';
 
 //TODO: Done Step 5 - Create a new class called StoryBrain.
 class StoryBrain {
-  //TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
+  //TODO: Done Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
   int _storyNumber = 0;
 
   //TODO: Done Step 7 - Uncomment the lines below to include storyData as a private property in StoryBrain. Hint: You might need to change something in story.dart to make this work.
